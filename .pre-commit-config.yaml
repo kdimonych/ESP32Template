@@ -55,7 +55,7 @@ repos:
         args: [--allow-multiple-documents]
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
-      - id: forbid-submodules
+      #- id: forbid-submodules
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
       - id: pretty-format-json

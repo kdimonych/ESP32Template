@@ -1,8 +1,8 @@
 {
   "name": "ESP32DevEnv",
   "build": {
-    "context": "esp32-env",
-    "dockerfile": "esp32-env/Dockerfile"
+    "context": "ESP32DevEnv",
+    "dockerfile": "ESP32DevEnv/Dockerfile"
   },
   "capAdd": [
     "SYS_PTRACE"
