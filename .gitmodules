@@ -1,0 +1,3 @@
+[submodule ".devcontainer/esp32-env"]
+	path = .devcontainer/esp32-env
+	url = https://github.com/kdimonych/ESP32DevEnv.git
