@@ -99,5 +99,12 @@
     "stop_token": "cpp",
     "filesystem": "cpp",
     "__availability": "cpp"
-  }
+  },
+  "cmake.configureOnEdit": false,
+  "cmake.configureArgs": [
+    "-DCMAKE_TOOLCHAIN_FILE=/opt/esp/idf/tools/cmake/toolchain-esp32.cmake",
+    "-DTARGET=esp32",
+    "-GNinja"
+  ],
+  "cmake.buildDirectory": "${workspaceFolder}/build_gcc_esp32"
 }

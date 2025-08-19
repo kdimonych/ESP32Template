@@ -1,11 +1,26 @@
 {
-  "name": "Debian",
+  "name": "ESP32DevEnv",
   "build": {
-    "dockerfile": "https://github.com/kdimonych/ESP32DevEnv.git"
+    "context": "esp32-env",
+    "dockerfile": "esp32-env/Dockerfile"
   },
+  "capAdd": [
+    "SYS_PTRACE"
+  ],
+  "securityOpt": [
+    "seccomp=unconfined"
+  ],
   "customizations": {
     "settings": {
-      "editor.formatOnSave": true
+      "terminal.integrated.shell.linux": "/bin/bash",
+      "cmake.configureOnOpen": true,
+      "cmake.buildDirectory": "${workspaceFolder}/build",
+      "cmake.generator": "Ninja",
+      "cmake.ninjaPath": "/usr/bin/ninja",
+      "clang-format.executable": "/usr/bin/clang-format",
+      "doxygen.runOnSave": true,
+      "doxygen.runOnSavePath": "${workspaceFolder}/docs/Doxyfile",
+      "terminal.integrated.inheritEnv": true
     },
     "extensions": [
       "chipcode-nl.gcc-arm-mac",
@@ -20,5 +35,6 @@
       "yzhang.markdown-all-in-one",
       "gruntfuggly.todo-tree"
     ]
-  }
+  },
+  "postCreateCommand": "echo ''"
 }

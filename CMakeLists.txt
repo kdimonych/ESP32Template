@@ -36,15 +36,15 @@ if("${TARGET}" IN_LIST TARGETS)
 else()
   message(WARNING "Unknown target ${TARGET}, creating stubs for esp32 instead")
   # Create stubs for esp32 and freertos, stub::esp32 and stub::freertos
-  add_subdirectory(stubs/esp32)
-  add_subdirectory(stubs/freertos)
-  add_subdirectory(stubs/spi_flash)
+  add_subdirectory(src/stubs/esp32)
+  add_subdirectory(src/stubs/freertos)
+  add_subdirectory(src/stubs/spi_flash)
 endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(ELF_FILES ${CMAKE_PROJECT_NAME}.elf)
-add_executable(${ELF_FILES} main.cpp)
+add_executable(${ELF_FILES} src/main.cpp)
 
 # Link the static libraries to the executable
 if("${TARGET}" IN_LIST TARGETS)
