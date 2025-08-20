@@ -33,7 +33,8 @@
       "cschlosser.doxdocgen",
       "betwo.vscode-doxygen-runner",
       "yzhang.markdown-all-in-one",
-      "gruntfuggly.todo-tree"
+      "gruntfuggly.todo-tree",
+      "espressif.esp-idf-extension"
     ]
   },
   "postCreateCommand": "echo ''"

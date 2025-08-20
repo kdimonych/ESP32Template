@@ -106,5 +106,12 @@
     "-DTARGET=esp32",
     "-GNinja"
   ],
-  "cmake.buildDirectory": "${workspaceFolder}/build_gcc_esp32"
+  "cmake.buildDirectory": "${workspaceFolder}/build_gcc_esp32",
+  "idf.pythonInstallPath": "/usr/bin/python3",
+  "idf.espIdfPath": "/opt/esp/idf",
+  "idf.toolsPath": "/opt/esp",
+  "idf.flashType": "JTAG",
+  "idf.openOcdConfigs": [
+    "board/esp32-wrover-kit-3.3v.cfg"
+  ]
 }

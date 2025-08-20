@@ -5,16 +5,44 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb"
+            "name": "(gdbtarget) Launch",
+            "type": "gdbtarget",
+            "request": "attach",
+            "program": "/workspaces/ESP32Template/build_gcc_esp32/template-project.elf",
+            "initCommands": [
+                "set remote hardware-watchpoint-limit 2",
+                "mon reset halt",
+                "maintenance flush register-cache",
+                "thb app_main"
+            ],
+            "runOpenOCD": true,
+            "verbose": true,
+            "target": {
+                "connectCommands": [
+                    "set remotetimeout 20",
+                    "-target-select extended-remote host.docker.internal:3333"
+                ]
+            }
+        },
+        {
+            "name": "Cortex-Debug with external OpenOCD",
+            "type": "cortex-debug",
+            "request": "attach",
+            "servertype": "external",
+            "executable": "/workspaces/ESP32Template/build_gcc_esp32/template-project.elf",
+            "cwd": "${workspaceRoot}",
+            "gdbPath": "/opt/esp/tools/xtensa-esp-elf-gdb/16.2_20250324/xtensa-esp-elf-gdb/bin/xtensa-esp32-elf-gdb",
+            "objdumpPath": "/opt/esp/tools/xtensa-esp-elf-gdb/16.2_20250324/xtensa-esp-elf-gdb/bin/xtensa-esp32-elf-gdb",
+            "gdbTarget": "host.docker.internal:3333",
+            "device": "ESP32",
+            "runToEntryPoint": "main",
+            "postAttachCommands": [
+                "monitor reset halt",
+                "monitor program_esp /Users/admin/Documents/Esp32/ESP32Template/build_gcc_esp32/bootloader/bootloader.bin 0x1000 verify",
+                "monitor program_esp /Users/admin/Documents/Esp32/ESP32Template/build_gcc_esp32/partition_table/partition-table.bin 0x8000 verify",
+                "monitor program_esp /Users/admin/Documents/Esp32/ESP32Template/build_gcc_esp32/template-project.bin 0x10000 verify",
+                "monitor reset halt"
+            ]
         }
     ]
 }
