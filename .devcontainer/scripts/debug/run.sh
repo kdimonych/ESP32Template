@@ -45,8 +45,11 @@ if [ -z "${HOST_WORKSPACE_PATH}" ]; then
   exit 1
 fi
 
-PROJECT_PATH=../..
-PROJECT_PATH=$(realpath --relative-to="/" "${PROJECT_PATH}")
+#determine the current script directory
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+
+PROJECT_PATH=${SCRIPT_DIR}/../../..
+PROJECT_PATH="/$(realpath --relative-to="/" "${PROJECT_PATH}")"
 
 echo "PROJECT_PATH=${PROJECT_PATH}"
 echo "BUILD_DIR=${BUILD_DIR}"
@@ -55,8 +58,6 @@ echo "BUILD_DIR=${BUILD_DIR}"
 BUILD_DIR_WORKSPACE=$(realpath --relative-to="${PROJECT_PATH}" "${BUILD_DIR}")
 echo "BUILD_DIR_WORKSPACE=${BUILD_DIR_WORKSPACE}"
 
-#determine the current script directory
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 FLASH_CMD_LIST=$(${SCRIPT_DIR}/flash_list.py ${BUILD_DIR}/flasher_args.json)
 
 # Generate the program_esp commands

@@ -30,7 +30,7 @@ if("${TARGET}" IN_LIST TARGETS)
     freertos
     esptool_py
     SDKCONFIG
-    ${CMAKE_CURRENT_LIST_DIR}/build_system/sdkconfig
+    ${CMAKE_CURRENT_LIST_DIR}/sdkconfig
     BUILD_DIR
     ${CMAKE_BINARY_DIR})
 else()

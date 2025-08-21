@@ -4,9 +4,9 @@
     {
       "label": "esp32-flash",
       "type": "shell",
-      "command": "${workspaceFolder}/scripts/debug/run.sh",
+      "command": "${workspaceFolder}/.devcontainer/scripts/debug/run.sh",
       "args": [
-        "${workspaceFolder}/build_gcc_esp32"
+        "${workspaceFolder}/${env:BUILD_DIR_NAME}"
       ],
       "presentation": {
         "panel": "new"

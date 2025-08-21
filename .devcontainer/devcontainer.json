@@ -11,13 +11,14 @@
     "seccomp=unconfined"
   ],
   "containerEnv": {
-    "HOST_WORKSPACE_PATH": "/Users/admin/Documents/Esp32/ESP32Template"
+    "HOST_WORKSPACE_PATH": "/Users/admin/Documents/Esp32/ESP32Template",
+    "BUILD_DIR_NAME": "build_gcc_esp32"
   },
   "customizations": {
     "settings": {
       "terminal.integrated.shell.linux": "/bin/bash",
       "cmake.configureOnOpen": true,
-      "cmake.buildDirectory": "${workspaceFolder}/build_gcc_esp32",
+      "cmake.buildDirectory": "${workspaceFolder}/${env:BUILD_DIR_NAME}",
       "cmake.generator": "Ninja",
       "cmake.ninjaPath": "/usr/bin/ninja",
       "clang-format.executable": "/usr/bin/clang-format",
