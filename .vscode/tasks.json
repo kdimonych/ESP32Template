@@ -6,11 +6,12 @@
       "type": "shell",
       "command": "${workspaceFolder}/scripts/debug/run.sh",
       "args": [
-        "build_gcc_esp32",
+        "${workspaceFolder}/build_gcc_esp32"
       ],
       "presentation": {
         "panel": "new"
-      }
+      },
+      "problemMatcher": []
     }
   ]
 }

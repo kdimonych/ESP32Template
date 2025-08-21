@@ -23,7 +23,6 @@ show_help(){
   echo "     HOST_WORKSPACE_PATH    The build directory relative to the host file system."
   echo "                            This value will be used to substitute the for openocd commands "
   echo "                            only if second argument <HOST_WORKSPACE_PATH> is not provided."
-  echo "     PROJECT_PATH           The project directory path relative to the container file system."
 }
 
 # If help requested
@@ -46,13 +45,10 @@ if [ -z "${HOST_WORKSPACE_PATH}" ]; then
   exit 1
 fi
 
-# If no PROJECT_PATH is specified, show error and help page
-if [ -z "${PROJECT_PATH}" ]; then
-  echo "Error: PROJECT_PATH environment variable is not specified."
-  show_help
-  exit 1
-fi
+PROJECT_PATH=../..
+PROJECT_PATH=$(realpath --relative-to="/" "${PROJECT_PATH}")
 
+echo "PROJECT_PATH=${PROJECT_PATH}"
 echo "BUILD_DIR=${BUILD_DIR}"
 
 # Determine the build directory path relative to workspace path

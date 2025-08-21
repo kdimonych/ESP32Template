@@ -11,8 +11,7 @@
     "seccomp=unconfined"
   ],
   "containerEnv": {
-    "HOST_WORKSPACE_PATH": "/Users/admin/Documents/Esp32/ESP32Template",
-    "PROJECT_PATH": "${workspaceFolder}"
+    "HOST_WORKSPACE_PATH": "/Users/admin/Documents/Esp32/ESP32Template"
   },
   "customizations": {
     "settings": {
@@ -27,7 +26,6 @@
       "terminal.integrated.inheritEnv": true
     },
     "extensions": [
-      "chipcode-nl.gcc-arm-mac",
       "ms-vscode.cpptools",
       "ms-vscode.cpptools-extension-pack",
       "ms-vscode.cpptools-themes",
