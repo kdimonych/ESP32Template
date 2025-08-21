@@ -10,11 +10,15 @@
   "securityOpt": [
     "seccomp=unconfined"
   ],
+  "containerEnv": {
+    "HOST_WORKSPACE_PATH": "/Users/admin/Documents/Esp32/ESP32Template",
+    "PROJECT_PATH": "${workspaceFolder}"
+  },
   "customizations": {
     "settings": {
       "terminal.integrated.shell.linux": "/bin/bash",
       "cmake.configureOnOpen": true,
-      "cmake.buildDirectory": "${workspaceFolder}/build",
+      "cmake.buildDirectory": "${workspaceFolder}/build_gcc_esp32",
       "cmake.generator": "Ninja",
       "cmake.ninjaPath": "/usr/bin/ninja",
       "clang-format.executable": "/usr/bin/clang-format",
@@ -29,13 +33,12 @@
       "ms-vscode.cpptools-themes",
       "xaver.clang-format",
       "ms-vscode.cmake-tools",
-      "marus25.cortex-debug",
       "cschlosser.doxdocgen",
       "betwo.vscode-doxygen-runner",
       "yzhang.markdown-all-in-one",
       "gruntfuggly.todo-tree",
-      "espressif.esp-idf-extension"
+      "marus25.cortex-debug"
     ]
   },
-  "postCreateCommand": "echo ''"
+  "postCreateCommand": " "
 }

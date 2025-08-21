@@ -1,5 +1,4 @@
 {
-  "CMake.configureOnOpen": true,
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
   "workbench.preferredLightColorTheme": "Default Light Modern",
   "files.associations": {
@@ -107,11 +106,9 @@
     "-GNinja"
   ],
   "cmake.buildDirectory": "${workspaceFolder}/build_gcc_esp32",
-  "idf.pythonInstallPath": "/usr/bin/python3",
-  "idf.espIdfPath": "/opt/esp/idf",
-  "idf.toolsPath": "/opt/esp",
-  "idf.flashType": "JTAG",
-  "idf.openOcdConfigs": [
-    "board/esp32-wrover-kit-3.3v.cfg"
-  ]
+  "cmake.additionalCompilerSearchDirs": [
+    "${env:IDF_PATH}"
+  ],
+  "cmake.automaticReconfigure": false,
+  "cmake.buildBeforeRun": false
 }

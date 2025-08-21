@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Enable debugging
 set -euo pipefail
 
 #determine the current script directory
